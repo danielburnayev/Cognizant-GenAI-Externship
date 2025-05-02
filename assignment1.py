@@ -5,5 +5,4 @@ name = "Daniel"
 age = 20
 height = 6.3
 
-print("Hey y'all, this is " + name + " here, " + age + " years old and " + height + " inches tall.")
-
+print("Hey y'all, this is " + name + " here, " + str(age) + " years old and " + str(height) + " feet tall.")
