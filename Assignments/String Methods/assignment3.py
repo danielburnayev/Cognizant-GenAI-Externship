@@ -16,3 +16,12 @@ Stripped string: \"" + og_str.strip() + "\"\n\
 Capitalized string: \"" + og_str.capitalize() + "\"\n\
 Replaced string: \"" + og_str.replace("world", "universe") + "\"\n\
 Uppercase string: \"" + og_str.upper() + "\"")
+
+
+# task 3
+given_str = input("\nGive me a string, any string: ")
+backwards_str = given_str[::-1]
+if given_str == backwards_str:
+    print("Yes,", "\'" + given_str + "\'", "is a palindrome!")
+else:
+    print("No,", "\'" + given_str + "\'", "is not a palindrome.")
