@@ -11,3 +11,11 @@ given_nums = nums_input.split()
 
 greet_user(name_input)
 print(int(given_nums[0]), "+", int(given_nums[1]), "=", add_numbers(int(given_nums[0]), int(given_nums[1])))
+
+
+# task 2
+def describe_pet(pet_name: str, animal_type: str = "dog"):
+    print("I have a", animal_type, "named", pet_name + ".")
+
+describe_pet("Buddy")
+describe_pet("Whiskers", "cat")
