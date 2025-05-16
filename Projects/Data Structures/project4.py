@@ -1,4 +1,4 @@
-acceptable_options = ["I", "R", "C", "S", "Q"]
+acceptable_options = ["I", "R", "C", "S", "Q", "V"]
 inventory = {
     "apple": (10, 2.5),
     "banana": (20, 1.2)
@@ -18,6 +18,7 @@ while True:
 \tRemove current item (R)\n\
 \tChange item's quantity and price (C)\n\
 \tSee current inventory (S)\n\
+\tEvaluate the value of the items (V)\n\
 \tQuit this applicaiton (Q)\n")
 
     if input_str not in acceptable_options:
@@ -30,6 +31,13 @@ while True:
             inventory_contents += f"Item: {pair[0]}, Quantity: {pair[1][0]}, Price: {pair[1][1]:.2f}\n"
         print(inventory_contents)
         inventory_contents = ""
+        continue
+    if input_str == "V":
+        total_value = 0
+        for value in inventory.values():
+            print(value)
+            total_value += value[0] * value[1]
+        print(f"The whole inventory has a value of ${total_value:.2f}\n")
         continue
     
     the_item = input("Type an item name: ")
