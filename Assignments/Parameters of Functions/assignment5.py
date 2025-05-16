@@ -22,3 +22,15 @@ animal_name = input("Now, what is the name of the animal of your choice? ")
 animal_type = input("What type of animal is " + animal_name + "? ")
 describe_pet(dog_name)
 describe_pet(animal_name, animal_type)
+
+
+# task 3
+def make_sandwich(*args):
+    print("Making a sandwich with the following ingredients:")
+    for ingredient in args:
+        print("\t- ", ingredient)
+
+ingredients_input = input("Welcome to the snadwich maker! To start, list all the ingredients you want in your sandwich. Make sure to seperate every ingredient with a comma.")
+ingredients = ingredients_input.split(",")
+ingredients = list(map(lambda param: param.strip(), ingredients))
+make_sandwich(*ingredients)
