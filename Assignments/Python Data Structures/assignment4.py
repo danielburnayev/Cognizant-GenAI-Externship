@@ -23,3 +23,12 @@ for pair in dict.items():
     key_str += pair[0] + follower
     val_str += pair[1] + follower
 print("\n" + key_str, "\n" + val_str)
+
+
+# task 3
+fav_stuff = ("Kung Fu Panda", "Bordom", "idk i don't really read")
+print("\nFavorite things:", fav_stuff)
+
+# fav_stuff[2] = "Harry Potter: Prisoner of Azkaban"
+print("Oops! Tuples cannot be changed.")
+print("Length of tuple:", len(fav_stuff))
