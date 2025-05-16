@@ -19,7 +19,7 @@ while True:
 \tChange item's quantity and price (C)\n\
 \tSee current inventory (S)\n\
 \tEvaluate the value of the items (V)\n\
-\tQuit this applicaiton (Q)\n")
+\tQuit this applicaiton (Q)\n").upper()
 
     if input_str not in acceptable_options:
         print(input_str, "is not a valid option to select from. Try again.\n")
@@ -35,7 +35,6 @@ while True:
     if input_str == "V":
         total_value = 0
         for value in inventory.values():
-            print(value)
             total_value += value[0] * value[1]
         print(f"The whole inventory has a value of ${total_value:.2f}\n")
         continue
