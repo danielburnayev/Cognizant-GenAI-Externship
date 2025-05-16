@@ -36,8 +36,8 @@ while True:
                   "" if num_check else "one numerical digit",
                   "" if special_check else "one special character"]
     for index, error in enumerate(error_list):
-        error_msg += "and " if requirements > 2 and require_copy == 1 and error != "" else ""
-        error_list[index] += ", " if require_copy > 1 and error != "" else ""
+        error_msg += "and " if requirements > 1 and require_copy == 1 and error != "" else ""
+        error_list[index] += ", " if require_copy > 2 and error != "" else ""
         error_msg += error_list[index]
         if error != "":
             require_copy -= 1
