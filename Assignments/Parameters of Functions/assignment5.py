@@ -17,5 +17,8 @@ print(int(given_nums[0]), "+", int(given_nums[1]), "=", add_numbers(int(given_nu
 def describe_pet(pet_name: str, animal_type: str = "dog"):
     print("I have a", animal_type, "named", pet_name + ".")
 
-describe_pet("Buddy")
-describe_pet("Whiskers", "cat")
+dog_name = input("\nGive a dog name. ")
+animal_name = input("Now, what is the name of the animal of your choice? ")
+animal_type = input("What type of animal is " + animal_name + "? ")
+describe_pet(dog_name)
+describe_pet(animal_name, animal_type)
