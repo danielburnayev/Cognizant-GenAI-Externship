@@ -8,6 +8,21 @@ def factorial(num):
         return 1
     return num * factorial(num - 1)
 
+def fibonnaci(num):
+    if num < 0:
+        return -1
+    
+    if num == 0:
+        return 0
+    if num == 1:
+        return 1
+    return fibonnaci(num - 2) + fibonnaci(num - 1)
+
+def print_result(the_str, result, word, input):
+    the_str += "is " + str(result) + "." if result > 0 else "cannot be " + word + " since " + str(input) + " is not a positive number."
+    the_str += "\n"
+    print(the_str)
+
 
 correct_responses = ["factorial", "fact", "fibonnaci", "fib", "fractal", "frac", "exit"]
 
@@ -29,10 +44,12 @@ Option: ").lower()
         result = factorial(fact_input)
         print_str = str(fact_input) + "! "
 
-        print_str += "is " + str(result) + "." if result > 0 else "cannot be calculated since " + str(fact_input) + " is not a positive number."
-        print_str += "\n"
-
-        print(print_str)
+        print_result(print_str, result, "calculated", fact_input)
 
     if response == correct_responses[2] or response == correct_responses[3]:
-        print("reached fibonnaci\n")
+        fib_input = int(input("Provide a positive integer to determine the nth value in the Fibonnaci sequence: "))
+        result = fibonnaci(fib_input)
+        print_str = "The " + str(fib_input) + "th number in the Fibonnaci seqence "
+
+        print_result(print_str, result, "determined", fib_input)
+    
