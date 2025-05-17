@@ -34,3 +34,31 @@ ingredients_input = input("Welcome to the snadwich maker! To start, list all the
 ingredients = ingredients_input.split(",")
 ingredients = list(map(lambda param: param.strip(), ingredients))
 make_sandwich(*ingredients)
+
+
+# task 4
+def factorial(num: int):
+    if type(num) != int or num < 0:
+        return None
+    elif num == 0:
+        return 1
+    else:
+        return num * factorial(num - 1)
+    
+def fibonacci(nth_num: int):
+    if type(nth_num) != int or nth_num < 0:
+        return None
+    elif nth_num == 0:
+        return 0
+    elif nth_num == 1:
+        return 1
+    else:
+        return fibonacci(nth_num - 2) + fibonacci(nth_num - 1)
+
+print("Factorial of", 4, "is", factorial(4))
+print("Factorial of", -4, "is", factorial(-4), "since it cannot be calculated.")
+print("Factorial of", 4.5, "is", factorial(4.5), "since this function only calcuates factorials of integers.\n")
+
+print("The 6th fibonacci number is", fibonacci(6))
+print("The -6th fibonacci number is", fibonacci(-6), "since that cannot be determined.")
+print("The 6.5th fibonacci number is", fibonacci(6.5), "since that cannot be determined.")
