@@ -1,5 +1,14 @@
 from turtle import *
 
+def factorial(num):
+    if num < 0:
+        return 0
+    
+    if num == 0:
+        return 1
+    return num * factorial(num - 1)
+
+
 correct_responses = ["factorial", "fact", "fibonnaci", "fib", "fractal", "frac", "exit"]
 
 while True:
@@ -16,6 +25,14 @@ Option: ").lower()
         print("reached fractal\n")
     
     if response == correct_responses[0] or response == correct_responses[1]:
-        print("reached factorial\n")
+        fact_input = int(input("Provide a positive integer to calculate its factorial: "))
+        result = factorial(fact_input)
+        print_str = str(fact_input) + "! "
+
+        print_str += "is " + str(result) + "." if result > 0 else "cannot be calculated since " + str(fact_input) + " is not a positive number."
+        print_str += "\n"
+
+        print(print_str)
+
     if response == correct_responses[2] or response == correct_responses[3]:
         print("reached fibonnaci\n")
