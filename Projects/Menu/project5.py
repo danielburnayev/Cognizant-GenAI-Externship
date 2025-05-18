@@ -18,12 +18,24 @@ def fibonnaci(num):
         return 1
     return fibonnaci(num - 2) + fibonnaci(num - 1)
 
+def do_simple_function(input_prompt, input_method, word):
+    given_input = int(input(input_prompt))
+    result = input_method(given_input)
+    print_str = str(given_input) + "! "
+
+    print_result(print_str, result, word, given_input)
+
 def print_result(the_str, result, word, input):
     the_str += "is " + str(result) + "." if result > 0 else "cannot be " + word + " since " + str(input) + " is not a positive number."
     the_str += "\n"
     print(the_str)
 
 
+# -------------------------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------
+# runner code start
+# -------------------------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------
 correct_responses = ["factorial", "fact", "fibonnaci", "fib", "fractal", "frac", "exit"]
 
 while True:
@@ -40,16 +52,8 @@ Option: ").lower()
         print("reached fractal\n")
     
     if response == correct_responses[0] or response == correct_responses[1]:
-        fact_input = int(input("Provide a positive integer to calculate its factorial: "))
-        result = factorial(fact_input)
-        print_str = str(fact_input) + "! "
-
-        print_result(print_str, result, "calculated", fact_input)
+        do_simple_function("Provide a positive integer to calculate its factorial: ", factorial, "calculated")
 
     if response == correct_responses[2] or response == correct_responses[3]:
-        fib_input = int(input("Provide a positive integer to determine the nth value in the Fibonnaci sequence: "))
-        result = fibonnaci(fib_input)
-        print_str = "The " + str(fib_input) + "th number in the Fibonnaci seqence "
-
-        print_result(print_str, result, "determined", fib_input)
+        do_simple_function("Provide a positive integer to determine the nth value in the Fibonnaci sequence: ", fibonnaci, "determined")
     
