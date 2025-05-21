@@ -64,6 +64,27 @@ Input: "))
             break
 
 
+# task 3
+def enter_two_nums():
+    print("\nHere, we are going to divide two numbers, the two of which, you will provide.")
+    num1 = int(input("Please provide us with the dividend here (the first number): ")) 
+    num2 = int(input("Please provide us with the divisor here (the second number): "))
+    return num1, num2
+
+def task_three_func():
+    try:    
+        given_nums = enter_two_nums()
+    except ValueError:
+        print("Next time, make sure the dividend and the divisor are both numbers so that this program can work.\n")
+    except ZeroDivisionError:
+        print("Next time, make sure the divisor is not 0 so that this program can work.\n")
+    else:
+        print(f"{given_nums[0]} / {given_nums[1]} = {given_nums[0] / given_nums[1]}.\n")
+    finally:
+        print("Thanks for trying out my commmand-line simple division calculator!\n")
+
+
+
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 #       runner code
@@ -72,3 +93,4 @@ Input: "))
 if __name__ == "__main__":
     task_one_func()
     task_two_func()
+    task_three_func()
