@@ -1,4 +1,4 @@
-from turtle import *
+from turtle import Turtle, Screen
 
 def factorial(num):
     if num < 0:
@@ -26,9 +26,24 @@ def do_simple_function(input_prompt, input_method, word):
     print_result(print_str, result, word, given_input)
 
 def print_result(the_str, result, word, input):
-    the_str += "is " + str(result) + "." if result > 0 else "cannot be " + word + " since " + str(input) + " is not a positive number."
-    the_str += "\n"
+    the_str += "is " + str(result) + "." if result > 0 else "cannot be " + word + " since " + str(input) + " is not a positive number.\n"
     print(the_str)
+
+# THIS IS A WORK IN PROGRESS
+def make_fractal_tree():
+    s = Screen()
+    t = Turtle()
+
+    s.setup(width=1000, height=1000, startx=0, starty=0)
+
+    t.pendown()
+    t.left(180)
+    t.forward(100)
+    t.right(180)
+    t.forward(200)
+
+    t.screen.mainloop()
+    s.clear()
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------
@@ -50,6 +65,7 @@ Option: ").lower()
         break
     if response == correct_responses[-3] or response == correct_responses[-2]:
         print("reached fractal\n")
+        make_fractal_tree()
     
     if response == correct_responses[0] or response == correct_responses[1]:
         do_simple_function("Provide a positive integer to calculate its factorial: ", factorial, "calculated")
