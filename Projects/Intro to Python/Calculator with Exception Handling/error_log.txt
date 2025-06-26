@@ -1,0 +1,4 @@
+ERROR:__main__:ValueError occured in function get_two_nums(): One of the inputs provided in this method was not a number.
+ERROR:__main__:ZeroDivisionError occured in function menu(): The divisor provided (the second number) was 0, enabling division by 0.
+ERROR:__main__:ZeroDivisionError occured in function menu(): The divisor provided (the second number) was 0, enabling division by 0.
+ERROR:__main__:ValueError occured in function menu(): The provided option was not one of the valid options the calculator would accept.
